@@ -8,4 +8,11 @@ RSpec.describe ProductsController, type: :controller do
       expect(assigns(:products)).to eq([product])
     end
   end
+
+  describe 'GET #new' do
+    it 'assign a new @product' do
+      get :new
+      expect(assigns(:product)).not_to be_nil
+    end
+  end
 end
