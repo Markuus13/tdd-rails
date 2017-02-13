@@ -1,6 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe ProductController, type: :controller do
+class ProductsController < ApplicationController
+  def index
+    @products = Product.all
+  end
+end
+
+RSpec.describe ProductsController, type: :controller do
   describe 'GET #index' do
     it 'assigns @products' do
       product = Product.create
